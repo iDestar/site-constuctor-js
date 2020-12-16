@@ -1,11 +1,11 @@
 const model = [
   {
     type: 'title',
-    value: 'Hi',
+    value: 'Hello',
   },
   { type: 'text', value: 'some text' },
   { type: 'columns', value: ['first', 'second', 'third'] },
-  { type: 'img', value: './assets/img.png' },
+  { type: 'img', value: 'src/assets/img.png' },
 ];
 
 const siteEl = document.querySelector('#site');
@@ -57,7 +57,7 @@ function column(block) {
 function img(block) {
   return `
      <div class="row">
-        <img src="${block.value}">
+        <img src="${block.value}"/>
      </div>
     `;
 }
