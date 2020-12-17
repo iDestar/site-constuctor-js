@@ -1,3 +1,5 @@
+import row from './utils';
+
 function title(block) {
   return `
       <div class="row">            
