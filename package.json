@@ -4,11 +4,12 @@
   "description": "",
   "main": "main.js",
   "dependencies": {
+    "assets": "^3.0.1",
     "parcel-bundler": "^1.12.4"
   },
   "devDependencies": {},
   "scripts": {
-    "serve":"parcel ./src/index.html --open",
+    "serve": "parcel ./src/index.html --open",
     "build": "parcel build ./src/index.html",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
