@@ -1,20 +1,29 @@
-import { row, col } from './utils';
+import { row, col, css } from './utils';
 
 function title(block) {
-  return row(col(`<h1>${block.value}</h1>`));
+  const { styles, tag = 'h1' } = block.options;
+  return row(col(`<${tag}>${block.value}</${tag}>`), css(styles));
 }
 
 function text(block) {
-  return row(col(`<p>${block.value}</p>`));
+  const { styles, tag = 'p' } = block.options;
+  return row(col(`<${tag}>${block.value}</${tag}>`), css(styles));
 }
 
 function column(block) {
+  const { styles } = block.options;
+
   const html = block.value.map(col).join('');
-  return row(html);
+  return row(html, css(styles));
 }
 
 function img(block) {
-  return row(`<img src="${block.value}"/>`);
+  const { styles, imgStyles, alt = '' } = block.options;
+  console.log(imgStyles, alt);
+  return row(
+    `<img src="${block.value}" alt="${alt}" style="${css(imgStyles)}"/>`,
+    css(styles)
+  );
 }
 
 export const components = {
