@@ -1,7 +1,5 @@
 import { row, col } from './utils';
 
-let rowEl = '';
-
 function title(block) {
   return row(col(`<h1>${block.value}</h1>`));
 }
@@ -11,8 +9,8 @@ function text(block) {
 }
 
 function column(block) {
-  const html = block.value.map(col);
-  return row(html.join(''));
+  const html = block.value.map(col).join('');
+  return row(html);
 }
 
 function img(block) {
